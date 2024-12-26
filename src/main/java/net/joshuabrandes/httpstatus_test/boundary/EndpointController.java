@@ -1,4 +1,4 @@
-package net.joshuabrandes.httpstatus_test;
+package net.joshuabrandes.httpstatus_test.boundary;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +8,7 @@ import org.springframework.web.client.RestClient;
 
 @RestController
 @RequestMapping("/v1")
-public class EndpointController {
+class EndpointController {
 
     @GetMapping("/status")
     public ResponseEntity<String> status() {
