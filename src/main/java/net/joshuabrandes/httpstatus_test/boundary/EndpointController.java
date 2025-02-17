@@ -12,9 +12,12 @@ class EndpointController {
 
     @GetMapping("/status")
     public ResponseEntity<String> status() {
-        return RestClient.create().get()
-                .uri("https://httpstat.us/200?sleep=5000")
-                .retrieve()
-                .toEntity(String.class);
+        // sleep 5 seconds
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return ResponseEntity.ok("OK");
     }
 }
